@@ -1,3 +1,5 @@
+const display = document.querySelector('#display');
+
 function add(num1, num2) {
     return num1 + num2;
 }
@@ -29,5 +31,7 @@ function operate(num1, operator, num2) {
         return divide(num1, num2)
     }
 };
+
+
 
 console.log(operate(2, '-', 2));
