@@ -1,4 +1,27 @@
+body {
+   border: 1px solid black; 
+   width: 400px;
+}
+
+#display {
+    /* border: 1px solid red; */
+    width: 400px;
+    height: 120px;
+    font-size: 50px;
+}
+
+button {
+    font-size: 60px;
+    width: 100px;
+    height: 120px;
+}
+
 #buttons {
     display: flex;
     flex-wrap: wrap;
+    width: 400px;
+}
+
+#zero {
+     width: 200px; 
 }
