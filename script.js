@@ -1,6 +1,10 @@
 const display = document.querySelector('#display');
 const calBtns = document.querySelector('#buttons');
 
+let firstNumber;
+let secondNumber;
+let operator;
+
 calBtns.addEventListener('click', (event) => {
     let input = event.target;
     display.innerText = input.value;
@@ -22,10 +26,6 @@ function multiply(num1, num2) {
 function divide(num1, num2) {
     return num1 / num2;
 }
-
-let firstNumber;
-let secondNumber;
-let operator;
 
 function operate(num1, operator, num2) {
     if (operator == '+') {
