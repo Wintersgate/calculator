@@ -1,6 +1,12 @@
 const display = document.querySelector('#display');
 const calBtns = document.querySelector('#buttons');
 
+calBtns.addEventListener('click', (event) => {
+    let input = event.target;
+    display.innerText = input.value;
+    console.log(input);
+});
+
 function add(num1, num2) {
     return num1 + num2;
 }
@@ -32,11 +38,5 @@ function operate(num1, operator, num2) {
         return divide(num1, num2)
     }
 };
-
-function updateDisplay () {
-    display.innerText = '0';
-}
-
-updateDisplay();
 
 console.log(operate(2, '-', 2));
