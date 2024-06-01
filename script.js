@@ -6,9 +6,11 @@ let secondNumber;
 let operator;
 
 calBtns.addEventListener('click', (event) => {
-    let input = event.target;
-    display.innerText = input.value;
-    console.log(input);
+    const array1 = [];
+    let num1 = event.target;
+    array1.push(num1.value);
+    display.innerText = num1.value;
+    console.log(array1);
 });
 
 function add(num1, num2) {
