@@ -9,7 +9,7 @@ window.addEventListener('click', (event) => {
     firstArray.push(event.target.value);
     displayValue = firstArray.join('');
     updateDisplay();
-})
+});
 
 function updateDisplay() {
     display = document.getElementById('display');
@@ -17,7 +17,7 @@ function updateDisplay() {
     if (displayValue.length > 9) {
         display.innerText = displayValue.substring(0, 9);
     }
-}
+};
 updateDisplay();
 
 // function to calculate from two numbers and an operator
@@ -32,4 +32,11 @@ function operate(firstNumber, operator, secondNumber) {
     } else if (operator == '/') {
         return firstNumber / secondNumber;
     }
+};
+
+function clearDisplay() {
+    firstNumber = null;
+    secondNumber = null;
+    operator = null;
+    displayValue = '0';
 };
