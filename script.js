@@ -74,3 +74,11 @@ function clearDisplay() {
     updateDisplay();
 };
 
+function clearOperation() {
+    firstNumber = null;
+    secondNumber = null;
+    operator = null;
+    displayValue = '0';
+    firstArray.length = 0;
+    updateDisplay();
+}
