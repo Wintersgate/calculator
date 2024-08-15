@@ -6,9 +6,17 @@ const firstArray = [];
 const buttons = document.querySelectorAll('button');
 
 window.addEventListener('click', (event) => {
-    firstArray.push(event.target.value);
-    displayValue = firstArray.join('');
-    updateDisplay();
+    if (event.target.className == 'operand') {
+        firstArray.push(event.target.value);
+        displayValue = firstArray.join('');
+        updateDisplay();
+    } else if (event.target.className == 'operator') {
+        firstNumber = displayValue;
+        clearDisplay();
+    } else if (event.target.className == 'clear') {
+        clearDisplay();
+    }
+    
 });
 
 function updateDisplay() {
@@ -35,8 +43,7 @@ function operate(firstNumber, operator, secondNumber) {
 };
 
 function clearDisplay() {
-    firstNumber = null;
-    secondNumber = null;
-    operator = null;
     displayValue = '0';
+    firstArray.length = 0;
+    updateDisplay();
 };
