@@ -12,6 +12,9 @@ window.addEventListener('click', (event) => {
     } else if (event.target.className == 'operator') {
         inputOperator();
         updateDisplay();
+    } else if (event.target.className == 'equals') {
+        operate(firstNumber, operator, secondNumber);
+        updateDisplay();
     } else if (event.target.className == 'clear') {
         clearDisplay();
     }
@@ -46,6 +49,7 @@ function inputOperand() {
 function inputOperator() {
     clearDisplay();
     operator = event.target.value;
+    displayValue = operator;
     console.log(operator);
     return operator;
 }
@@ -54,13 +58,13 @@ function inputOperator() {
 // Add, subtract, multiply, divide
 function operate(firstNumber, operator, secondNumber) {
     if (operator == '+') {
-        return firstNumber + secondNumber;
+        displayValue = (Number(firstNumber) + Number(secondNumber));
     } else if (operator == '-') {
-        return firstNumber - secondNumber;
+        displayValue = (firstNumber - secondNumber);
     } else if (operator == '*') {
-        return firstNumber * secondNumber; 
+        displayValue = (firstNumber * secondNumber); 
     } else if (operator == '/') {
-        return firstNumber / secondNumber;
+        displayValue = (firstNumber / secondNumber);
     }
 };
 
@@ -69,3 +73,4 @@ function clearDisplay() {
     firstArray.length = 0;
     updateDisplay();
 };
+
