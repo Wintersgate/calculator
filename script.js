@@ -7,12 +7,11 @@ const buttons = document.querySelectorAll('button');
 
 window.addEventListener('click', (event) => {
     if (event.target.className == 'operand') {
-        firstArray.push(event.target.value);
-        displayValue = firstArray.join('');
+        inputOperand();
         updateDisplay();
     } else if (event.target.className == 'operator') {
-        firstNumber = displayValue;
-        clearDisplay();
+        inputOperator();
+        updateDisplay();
     } else if (event.target.className == 'clear') {
         clearDisplay();
     }
@@ -27,6 +26,29 @@ function updateDisplay() {
     }
 };
 updateDisplay();
+
+function inputOperand() {
+    if ( firstNumber == null) {
+        firstArray.push(event.target.value);
+        displayValue = firstArray.join('');
+        firstNumber = displayValue;
+        console.log(firstNumber);
+        return firstNumber;
+    } else if (firstNumber != null) {
+        firstArray.push(event.target.value);
+        displayValue = firstArray.join('');
+        secondNumber = displayValue;
+        console.log(secondNumber);
+        return secondNumber;
+    }    
+}
+
+function inputOperator() {
+    clearDisplay();
+    operator = event.target.value;
+    console.log(operator);
+    return operator;
+}
 
 // function to calculate from two numbers and an operator
 // Add, subtract, multiply, divide
