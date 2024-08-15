@@ -28,13 +28,13 @@ function updateDisplay() {
 updateDisplay();
 
 function inputOperand() {
-    if ( firstNumber == null) {
+    if (operator == null) {
         firstArray.push(event.target.value);
         displayValue = firstArray.join('');
         firstNumber = displayValue;
         console.log(firstNumber);
         return firstNumber;
-    } else if (firstNumber != null) {
+    } else if (operator != null) {
         firstArray.push(event.target.value);
         displayValue = firstArray.join('');
         secondNumber = displayValue;
