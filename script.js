@@ -14,6 +14,7 @@ window.addEventListener('click', (event) => {
         updateDisplay();
     } else if (event.target.className == 'equals') {
         operate(firstNumber, operator, secondNumber);
+        firstNumber = displayValue;
         updateDisplay();
     } else if (event.target.className == 'clear') {
         clearOperation();
@@ -48,10 +49,19 @@ function inputOperand() {
 
 function inputOperator() {
     clearDisplay();
-    operator = event.target.value;
-    displayValue = operator;
-    console.log(operator);
-    return operator;
+    if (operator == null) {
+        operator = event.target.value;
+        displayValue = operator;
+        console.log(operator);
+        return operator;
+    } else {
+        operate(firstNumber, operator, secondNumber)
+        operator = event.target.value;
+        displayValue = operator;
+        console.log(operator);
+        return operator; 
+    }
+    
 }
 
 // function to calculate from two numbers and an operator
