@@ -77,8 +77,13 @@ function operate(firstNumber, operator, secondNumber) {
         number = (firstNumber * secondNumber);
         displayValue = number.toFixed(3); 
     } else if (operator == '/') {
-        number = (firstNumber / secondNumber);
-        displayValue = number.toFixed(3);
+        if (secondNumber != '0') {
+            number = (firstNumber / secondNumber);
+            displayValue = number.toFixed(3);
+        } else if (secondNumber == '0') {
+            displayValue = 'LMAO';
+        }
+        
     }
 };
 
