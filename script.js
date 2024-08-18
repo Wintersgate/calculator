@@ -15,6 +15,7 @@ window.addEventListener('click', (event) => {
     } else if (event.target.className == 'equals') {
         operate(firstNumber, operator, secondNumber);
         firstNumber = displayValue;
+        operator = null;
         updateDisplay();
     } else if (event.target.className == 'clear') {
         clearOperation();
