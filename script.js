@@ -19,6 +19,8 @@ window.addEventListener('click', (event) => {
         updateDisplay();
     } else if (event.target.className == 'clear') {
         clearOperation();
+    } else if (event.target.className == 'sign') {
+        inputSign();
     }
 });
 
@@ -63,23 +65,37 @@ function inputOperator() {
     }
 }
 
+function inputSign() {
+    if (operator == null) {
+        firstNumber = -firstNumber;
+        displayValue = firstNumber;
+        updateDisplay();
+        console.log(firstNumber);
+    } else if (operator != null) {
+        secondNumber = -secondNumber;
+        displayValue = secondNumber;
+        updateDisplay();
+        console.log(secondNumber);
+    }
+}
+
 // function to calculate from two numbers and an operator
 // Add, subtract, multiply, divide
 function operate(firstNumber, operator, secondNumber) {
     let number;
     if (operator == '+') {
         number = (Number(firstNumber) + Number(secondNumber));
-        displayValue = number.toFixed(3); 
+        displayValue = number.toFixed(2); 
     } else if (operator == '-') {
         number = (firstNumber - secondNumber);
-        displayValue = number.toFixed(3);
+        displayValue = number.toFixed(2);
     } else if (operator == '*') {
         number = (firstNumber * secondNumber);
-        displayValue = number.toFixed(3); 
+        displayValue = number.toFixed(2); 
     } else if (operator == '/') {
         if (secondNumber != '0') {
             number = (firstNumber / secondNumber);
-            displayValue = number.toFixed(3);
+            displayValue = number.toFixed(2);
         } else if (secondNumber == '0') {
             displayValue = 'LMAO';
         }
