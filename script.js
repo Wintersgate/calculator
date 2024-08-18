@@ -97,7 +97,7 @@ function operate(firstNumber, operator, secondNumber) {
             number = (firstNumber / secondNumber);
             displayValue = number.toFixed(2);
         } else if (secondNumber == '0') {
-            displayValue = 'LMAO';
+            displayValue = 'ERROR';
         }
         
     }
