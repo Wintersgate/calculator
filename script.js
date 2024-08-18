@@ -50,13 +50,13 @@ function inputOperator() {
     clearDisplay();
     if (operator == null) {
         operator = event.target.value;
-        displayValue = operator;
         console.log(operator);
         return operator;
     } else if (operator != null) {
         operate(firstNumber, operator, secondNumber)
+        firstNumber = displayValue;
+        updateDisplay();
         operator = event.target.value;
-        displayValue = operator;
         console.log(operator);
         return operator; 
     }
@@ -77,7 +77,6 @@ function operate(firstNumber, operator, secondNumber) {
 };
 
 function clearDisplay() {
-    displayValue = '0';
     firstArray.length = 0;
     updateDisplay();
 };
