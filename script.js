@@ -13,9 +13,7 @@ window.addEventListener('click', (event) => {
         inputOperator();
         updateDisplay();
     } else if (event.target.className == 'equals') {
-        operate(firstNumber, operator, secondNumber);
-        firstNumber = displayValue;
-        operator = null;
+        inputEquals();
         updateDisplay();
     } else if (event.target.className == 'clear') {
         clearOperation();
@@ -64,7 +62,7 @@ function inputOperator() {
         console.log(operator);
         return operator;
     } else if (operator != null) {
-        operate(firstNumber, operator, secondNumber)
+        displayValue = operate(firstNumber, operator, secondNumber)
         firstNumber = displayValue;
         operator = event.target.value;
         console.log(operator);
@@ -100,27 +98,28 @@ function inputDecimal() {
     } else {
         firstArray.push(event.target.value);
         displayValue = firstArray.join('');
-    }
-    
+    }   
+}
+
+function inputEquals() {
+    displayValue = operate(firstNumber, operator, secondNumber);
+    firstNumber = displayValue;
+    operator = null;
 }
 
 // function to calculate from two numbers and an operator
 // Add, subtract, multiply, divide
 function operate(firstNumber, operator, secondNumber) {
-    let number;
     if (operator == '+') {
-        number = (Number(firstNumber) + Number(secondNumber));
-        displayValue = number.toFixed(2); 
+        return Number(firstNumber) + Number(secondNumber); 
     } else if (operator == '-') {
-        number = (firstNumber - secondNumber);
-        displayValue = number.toFixed(2);
+        return firstNumber - secondNumber;
     } else if (operator == '*') {
-        number = (firstNumber * secondNumber);
-        displayValue = number.toFixed(2); 
+        return firstNumber * secondNumber; 
     } else if (operator == '/') {
         if (secondNumber != '0') {
-            number = (firstNumber / secondNumber);
-            displayValue = number.toFixed(2);
+            return firstNumber / secondNumber;
+            displayValue = num;
         } else if (secondNumber == '0') {
             displayValue = 'ERROR';
         }
