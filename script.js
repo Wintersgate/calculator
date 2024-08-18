@@ -19,7 +19,6 @@ window.addEventListener('click', (event) => {
     } else if (event.target.className == 'clear') {
         clearOperation();
     }
-    
 });
 
 function updateDisplay() {
@@ -54,14 +53,13 @@ function inputOperator() {
         displayValue = operator;
         console.log(operator);
         return operator;
-    } else {
+    } else if (operator != null) {
         operate(firstNumber, operator, secondNumber)
         operator = event.target.value;
         displayValue = operator;
         console.log(operator);
         return operator; 
     }
-    
 }
 
 // function to calculate from two numbers and an operator
