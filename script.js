@@ -19,10 +19,16 @@ window.addEventListener('click', (event) => {
         updateDisplay();
     } else if (event.target.className == 'clear') {
         clearOperation();
+        updateDisplay();
     } else if (event.target.className == 'sign') {
         inputSign();
+        updateDisplay();
     } else if (event.target.className == 'percent') {
         inputPercent();
+        updateDisplay();
+    } else if (event.target.className == 'decimal') {
+        inputDecimal();
+        updateDisplay();
     }
 });
 
@@ -60,7 +66,6 @@ function inputOperator() {
     } else if (operator != null) {
         operate(firstNumber, operator, secondNumber)
         firstNumber = displayValue;
-        updateDisplay();
         operator = event.target.value;
         console.log(operator);
         return operator; 
@@ -71,12 +76,10 @@ function inputSign() {
     if (operator == null) {
         firstNumber = -firstNumber;
         displayValue = firstNumber;
-        updateDisplay();
         console.log(firstNumber);
     } else if (operator != null) {
         secondNumber = -secondNumber;
         displayValue = secondNumber;
-        updateDisplay();
         console.log(secondNumber);
     }
 }
@@ -85,12 +88,20 @@ function inputPercent() {
     if(operator == null) {
         firstNumber = (firstNumber / 100);
         displayValue = firstNumber;
-        updateDisplay();
     } else if (operator != null) {
         secondNumber = (secondNumber / 100);
-        displayValue = secondNumber;
-        updateDisplay();
+        displayValue = secondNumber;   
     }
+}
+
+function inputDecimal() {
+    if (displayValue.includes('.')) {
+        return;
+    } else {
+        firstArray.push(event.target.value);
+        displayValue = firstArray.join('');
+    }
+    
 }
 
 // function to calculate from two numbers and an operator
@@ -128,5 +139,4 @@ function clearOperation() {
     operator = null;
     displayValue = '0';
     firstArray.length = 0;
-    updateDisplay();
 }
