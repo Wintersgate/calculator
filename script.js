@@ -102,7 +102,8 @@ function inputDecimal() {
 }
 
 function inputEquals() {
-    displayValue = operate(firstNumber, operator, secondNumber);
+    result = operate(firstNumber, operator, secondNumber);
+    displayValue = Math.round(result * 100) / 100;
     firstNumber = displayValue;
     operator = null;
 }
