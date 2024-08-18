@@ -66,14 +66,19 @@ function inputOperator() {
 // function to calculate from two numbers and an operator
 // Add, subtract, multiply, divide
 function operate(firstNumber, operator, secondNumber) {
+    let number;
     if (operator == '+') {
-        displayValue = (Number(firstNumber) + Number(secondNumber));
+        number = (Number(firstNumber) + Number(secondNumber));
+        displayValue = number.toFixed(3); 
     } else if (operator == '-') {
-        displayValue = (firstNumber - secondNumber);
+        number = (firstNumber - secondNumber);
+        displayValue = number.toFixed(3);
     } else if (operator == '*') {
-        displayValue = (firstNumber * secondNumber); 
+        number = (firstNumber * secondNumber);
+        displayValue = number.toFixed(3); 
     } else if (operator == '/') {
-        displayValue = (firstNumber / secondNumber);
+        number = (firstNumber / secondNumber);
+        displayValue = number.toFixed(3);
     }
 };
 
