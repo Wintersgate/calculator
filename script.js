@@ -21,6 +21,8 @@ window.addEventListener('click', (event) => {
         clearOperation();
     } else if (event.target.className == 'sign') {
         inputSign();
+    } else if (event.target.className == 'percent') {
+        inputPercent();
     }
 });
 
@@ -76,6 +78,18 @@ function inputSign() {
         displayValue = secondNumber;
         updateDisplay();
         console.log(secondNumber);
+    }
+}
+
+function inputPercent() {
+    if(operator == null) {
+        firstNumber = (firstNumber / 100);
+        displayValue = firstNumber;
+        updateDisplay();
+    } else if (operator != null) {
+        secondNumber = (secondNumber / 100);
+        displayValue = secondNumber;
+        updateDisplay();
     }
 }
 
