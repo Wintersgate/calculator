@@ -7,7 +7,10 @@ body {
     /* border: 1px solid red; */
     width: 400px;
     height: 120px;
-    font-size: 50px;
+    font-size: 75px;
+    text-align: end;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: rgb(185, 180, 180);
 }
 
 button {
@@ -24,4 +27,20 @@ button {
 
 #zero {
      width: 200px; 
+}
+
+.operator {
+    background-color: rgb(15, 165, 83);
+}
+
+.operand {
+    background-color: grey;
+}
+
+.equals, .decimal {
+    background-color: orange;
+}
+
+.sign, .clear, .percent {
+    background-color: rgb(12, 86, 172);
 }
