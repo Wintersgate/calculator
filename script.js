@@ -103,9 +103,14 @@ function inputDecimal() {
 
 function inputEquals() {
     result = operate(firstNumber, operator, secondNumber);
-    displayValue = Math.round(result * 100) / 100;
-    firstNumber = displayValue;
-    operator = null;
+    if (result == 'ERROR') {
+        DisplayValue = result;
+    } else {
+        displayValue = Math.round(result * 100) / 100;
+        firstNumber = displayValue;
+        operator = null;
+    }
+    
 }
 
 // function to calculate from two numbers and an operator
@@ -120,9 +125,9 @@ function operate(firstNumber, operator, secondNumber) {
     } else if (operator == '/') {
         if (secondNumber != '0') {
             return firstNumber / secondNumber;
-            displayValue = num;
         } else if (secondNumber == '0') {
-            displayValue = 'ERROR';
+            displayValue = 'ERROR'
+            return displayValue;
         }
         
     }
