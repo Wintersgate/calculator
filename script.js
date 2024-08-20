@@ -109,8 +109,7 @@ function inputEquals() {
         displayValue = Math.round(result * 100) / 100;
         firstNumber = displayValue;
         operator = null;
-    }
-    
+    }   
 }
 
 // function to calculate from two numbers and an operator
@@ -128,8 +127,7 @@ function operate(firstNumber, operator, secondNumber) {
         } else if (secondNumber == '0') {
             displayValue = 'ERROR'
             return displayValue;
-        }
-        
+        }    
     }
 };
 
